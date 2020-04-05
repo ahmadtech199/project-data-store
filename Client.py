@@ -1,6 +1,7 @@
 from Person import Person
-class Client:
-    def __init__(self,email):
-        self.id = Person._id
-        self.email = email
 
+
+class Client(Person):
+    def __init__(self, name, phone, gender, email):
+        super().__init__(name, phone, gender)
+        self.email = email
