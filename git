@@ -1,0 +1,82 @@
+[33mcommit c075b651e2823749dbd5d0585727394443abce81[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: ahmad alsobhi <ahmadtech199@gmail.comi>
+Date:   Sun Apr 5 11:15:30 2020 +0300
+
+    Initial commit
+
+[1mdiff --git a/.gitattributes b/.gitattributes[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dfe0770[m
+[1m--- /dev/null[m
+[1m+++ b/.gitattributes[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32m# Auto detect text files and perform LF normalization[m
+[32m+[m[32m* text=auto[m
+[1mdiff --git a/Client.py b/Client.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d093fb9[m
+[1m--- /dev/null[m
+[1m+++ b/Client.py[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mfrom Person import Person[m
+[32m+[m[32mclass Client:[m
+[32m+[m[32m    def __init__(self,email):[m
+[32m+[m[32m        self.id = Person._id[m
+[32m+[m[32m        self.email = email[m
+[32m+[m
+[1mdiff --git a/Employee.py b/Employee.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4dde0b8[m
+[1m--- /dev/null[m
+[1m+++ b/Employee.py[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mfrom Person import Person[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass Employee:[m
+[32m+[m
+[32m+[m[32m    def __init__(self, salary, working_time):[m
+[32m+[m[32m        self.id = Person._id[m
+[32m+[m[32m        self.salary = salary[m
+[32m+[m[32m        self.working_time = working_time[m
+[1mdiff --git a/Order.py b/Order.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2c00808[m
+[1m--- /dev/null[m
+[1m+++ b/Order.py[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mclass Order:[m
+[32m+[m[32m    _id = 0[m
+[32m+[m[32m    def __init__(self,date,is_paid,person,product):[m
+[32m+[m[32m        self.date= date[m
+[32m+[m[32m        self.is_paid = is_paid[m
+[32m+[m[32m        self.person[m
+[1mdiff --git a/Person.py b/Person.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9fa0f3e[m
+[1m--- /dev/null[m
+[1m+++ b/Person.py[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32mclass Person:[m
+[32m+[m[32m    _id = 0[m
+[32m+[m
+[32m+[m[32m    def __init__(self, name, phone, gender):[m
+[32m+[m[32m        Person._id += 1[m
+[32m+[m[32m        self.id = Person._id[m
+[32m+[m[32m        self.name = name[m
+[32m+[m[32m        self.phone = phone[m
+[32m+[m[32m        self.gender = gender[m
+[1mdiff --git a/Product.py b/Product.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..28eb4e5[m
+[1m--- /dev/null[m
+[1m+++ b/Product.py[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mclass Product:[m
+[32m+[m[32m    _id = 0[m
+[32m+[m
+[32m+[m[32m    def __init__(self, name, price):[m
+[32m+[m[32m        Product._id += 1[m
+[32m+[m[32m        self.id = Product._id[m
+[32m+[m[32m        self.name = name[m
+[32m+[m[32m        self.price = price[m
