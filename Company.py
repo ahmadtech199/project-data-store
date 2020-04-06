@@ -62,7 +62,6 @@ class Company:
     def print_person_info(self, id):
         for person in self.persons:
             if person.id == id:
-
                 print("id:", id)
                 print("name:", person.name)
                 print("phone:", person.phone)
