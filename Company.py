@@ -132,7 +132,7 @@ class Company:
                 print("Products:")
                 total_sum = 0
                 for product in order.products:
-                    
+
                     total_sum += product.price
                     print(f"- {product.name}:{product.price}$")
                 print(f"Totla Price: {total_sum}$")
