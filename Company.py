@@ -1,6 +1,6 @@
 from Client import Client
 from Employee import Employee
-
+from Product import Product
 
 
 class Company:
@@ -100,8 +100,9 @@ class Company:
                 print("Products:")
                 for product in order.products:
                     total_sum += product.price
-                    print("- " + product.name + ": " + str(product.price) + "$")
-                
+                    print("- " + product.name + ": " +
+                          str(product.price) + "$")
+
                 #  و الذي يمثل ثمن كل المشتريات الموضوعة في الفاتورة و من ثم الخروج من الدالة total_sum هنا سيتم عرض ناتج الجمع الذي تم تخزينه في المتغير
                 print("Total Price: " + str(total_sum) + "$")
                 print("----------------------")
@@ -110,4 +111,30 @@ class Company:
         print("Order with id", id, "is not found!")
         print("----------------------")
 
-
+    def print_person_orders(self, id):
+        is_person_exist = False
+        person_name = ""
+        for person in self.persons:
+            if person.id == id:
+                is_person_exist = True
+                break
+        if not is_person_exist:
+            print("Person with id", id, "is not found!")
+            print("----------------------")
+            return
+        else:
+            print("All orders made by person with id:", id)
+        for order in self.orders:
+            if order.person.id == id:
+                print("> Ordre: #", order.id)
+                print("Date:", order.date)
+                print("Is paid:", "Yes" if order.is_paid else "No")
+                print("Order by:", order.person.name)
+                print("Products:")
+                total_sum = 0
+                for product in order.products:
+                    
+                    total_sum += product.price
+                    print(f"- {product.name}:{product.price}$")
+                print(f"Totla Price: {total_sum}$")
+                print("----------------------")
